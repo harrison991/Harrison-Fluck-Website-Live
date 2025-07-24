@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Harrison Fluck</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Harrison Fluck</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="tours.html" class="nav-link">Tours</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <h1 class="hero-title">My Blog</h1>
+                <p class="hero-description">Adventures, experiences, and insights from my journey</p>
+            </div>
+        </section>
+
+        <!-- Blog Posts Section -->
+        <section class="blog-posts-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Latest Posts</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Posts</button>
+                        <button class="filter-btn" data-filter="adventure">Adventure</button>
+                        <button class="filter-btn" data-filter="sports">Sports</button>
+                        <button class="filter-btn" data-filter="personal">Personal</button>
+                        <button class="filter-btn" data-filter="technology">Technology</button>
+                    </div>
+                </div>
+                <div class="blog-posts-grid">
+                    <!-- Vision Valley Adventure Post -->
+                    <article class="blog-post" data-category="adventure">
+                        <div class="post-image">
+                            <img src="images/vision-valley.jpg" alt="Vision Valley Adventure" onerror="this.src='https://via.placeholder.com/400x250/4a90e2/ffffff?text=Vision+Valley'">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category adventure">Adventure</span>
+                                <span class="post-date">August 15, 2024</span>
+                            </div>
+                            <h3 class="post-title">
+                                <a href="blog-vision-valley.html">Vision Valley Adventure - My Epic Journey</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                Join me as I recount my incredible adventure at Vision Valley, where I discovered not just breathtaking landscapes, but also learned valuable lessons about perseverance, teamwork, and personal growth.
+                            </p>
+                            <div class="post-tags">
+                                <span class="tag">hiking</span>
+                                <span class="tag">nature</span>
+                                <span class="tag">personal-growth</span>
+                            </div>
+                            <a href="blog-vision-valley.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Stage Crew Life Post -->
+                    <article class="blog-post" data-category="personal">
+                        <div class="post-image">
+                            <img src="images/stage-crew.jpg" alt="Stage Crew Life" onerror="this.src='https://via.placeholder.com/400x250/6c5ce7/ffffff?text=Stage+Crew'">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category personal">Personal</span>
+                                <span class="post-date">September 20, 2024</span>
+                            </div>
+                            <h3 class="post-title">
+                                <a href="#" onclick="showComingSoon()">Behind the Scenes: Life as Stage Crew</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                Discover what it's really like working behind the scenes in theater production. From set building to lighting, here's my experience as a stage crew member.
+                            </p>
+                            <div class="post-tags">
+                                <span class="tag">theater</span>
+                                <span class="tag">teamwork</span>
+                                <span class="tag">skills</span>
+                            </div>
+                            <a href="#" onclick="showComingSoon()" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Rowing Season Post -->
+                    <article class="blog-post" data-category="sports">
+                        <div class="post-image">
+                            <img src="images/rowing.jpg" alt="Rowing Season" onerror="this.src='https://via.placeholder.com/400x250/00b894/ffffff?text=Rowing+Season'">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category sports">Sports</span>
+                                <span class="post-date">November 10, 2024</span>
+                            </div>
+                            <h3 class="post-title">
+                                <a href="#" onclick="showComingSoon()">Rowing Season Reflections</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                Reflecting on an intense rowing season filled with early morning training, team bonding, and the pursuit of excellence on the water.
+                            </p>
+                            <div class="post-tags">
+                                <span class="tag">rowing</span>
+                                <span class="tag">fitness</span>
+                                <span class="tag">discipline</span>
+                            </div>
+                            <a href="#" onclick="showComingSoon()" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder for future posts -->
+                    <article class="blog-post coming-soon" data-category="technology">
+                        <div class="post-image">
+                            <img src="https://via.placeholder.com/400x250/fd79a8/ffffff?text=Coming+Soon" alt="Coming Soon">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category technology">Technology</span>
+                                <span class="post-date">Coming Soon</span>
+                            </div>
+                            <h3 class="post-title">
+                                <a href="#" onclick="showComingSoon()">Building My Personal Website</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                The journey of creating this website, the technologies I learned, and the challenges I faced along the way.
+                            </p>
+                            <div class="post-tags">
+                                <span class="tag">web-development</span>
+                                <span class="tag">html</span>
+                                <span class="tag">css</span>
+                            </div>
+                            <a href="#" onclick="showComingSoon()" class="read-more">Coming Soon <i class="fas fa-clock"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Empty State -->
+                <div class="no-posts" id="no-posts" style="display: none;">
+                    <div class="empty-state">
+                        <i class="fas fa-search"></i>
+                        <h3>No posts found</h3>
+                        <p>Try selecting a different category or check back later for new content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-card">
+                    <div class="newsletter-content">
+                        <h3>Stay Updated</h3>
+                        <p>Get notified when I publish new blog posts about my adventures and experiences.</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Harrison Fluck</h3>
+                    <p>15-year-old student passionate about adventures, technology, and creativity.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="activities.html">Activities</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Latest Posts</h4>
+                    <ul>
+                        <li><a href="blog-vision-valley.html">Vision Valley Adventure</a></li>
+                        <li><a href="#" onclick="showComingSoon()">Stage Crew Life</a></li>
+                        <li><a href="#" onclick="showComingSoon()">Rowing Reflections</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Harrison Fluck. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+    <script>
+        function showComingSoon() {
+            alert('This blog post is coming soon! Check back later for more content.');
+        }
+    </script>
+</body>
+</html>

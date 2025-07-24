@@ -1,0 +1,48 @@
+title: Harrison Fluck - Personal Website
+description: 15-year-old student passionate about adventures, technology, and creativity
+url: "https://harrison991.github.io"
+baseurl: "/Harrison-Fluck-Website"
+
+# Jekyll settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Site settings
+author:
+  name: Harrison Fluck
+  email: harrison@example.com
+  github: harrison991
+
+# Blog settings
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+# Defaults
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Harrison Fluck"
