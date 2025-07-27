@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 4.3'
+# GitHub Pages compatible Jekyll
+gem 'github-pages', '~> 228', group: :jekyll_plugins
+
+# Additional plugins that work with GitHub Pages
 gem 'jekyll-feed'
 gem 'jekyll-sitemap'
 gem 'jekyll-seo-tag'

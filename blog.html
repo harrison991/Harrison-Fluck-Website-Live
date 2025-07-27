@@ -20,6 +20,7 @@
                 <a href="activities.html" class="nav-link">Activities</a>
                 <a href="tours.html" class="nav-link">Tours</a>
                 <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="wallpapers.html" class="nav-link">Wallpapers</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
             <div class="hamburger" id="hamburger">
@@ -52,106 +53,48 @@
                         <button class="filter-btn" data-filter="technology">Technology</button>
                     </div>
                 </div>
-                <div class="blog-posts-grid">
-                    <!-- Vision Valley Adventure Post -->
-                    <article class="blog-post" data-category="adventure">
+                <div class="blog-posts-grid" id="blog-posts-grid">
+                    {% for post in site.posts %}
+                    <article class="blog-post" data-category="{{ post.category }}">
                         <div class="post-image">
-                            <img src="images/vision-valley.jpg" alt="Vision Valley Adventure" onerror="this.src='https://via.placeholder.com/400x250/4a90e2/ffffff?text=Vision+Valley'">
+                            {% if post.featured_image %}
+                                <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" onerror="this.src='https://via.placeholder.com/400x250/4a90e2/ffffff?text={{ post.title | url_encode }}'">
+                            {% else %}
+                                <img src="https://via.placeholder.com/400x250/4a90e2/ffffff?text={{ post.title | url_encode }}" alt="{{ post.title }}">
+                            {% endif %}
                         </div>
                         <div class="post-content">
                             <div class="post-meta">
-                                <span class="post-category adventure">Adventure</span>
-                                <span class="post-date">August 15, 2024</span>
+                                <span class="post-category {{ post.category }}">{{ post.category | capitalize }}</span>
+                                <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    {% assign words = post.content | number_of_words %}
+                                    {% assign read_time = words | divided_by: 200 | at_least: 1 %}
+                                    {{ read_time }} min read
+                                </span>
                             </div>
                             <h3 class="post-title">
-                                <a href="blog-vision-valley.html">Vision Valley Adventure - My Epic Journey</a>
+                                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                             </h3>
                             <p class="post-excerpt">
-                                Join me as I recount my incredible adventure at Vision Valley, where I discovered not just breathtaking landscapes, but also learned valuable lessons about perseverance, teamwork, and personal growth.
+                                {% if post.excerpt %}
+                                    {{ post.excerpt | strip_html | truncate: 200 }}
+                                {% else %}
+                                    {{ post.content | strip_html | truncate: 200 }}
+                                {% endif %}
                             </p>
+                            {% if post.tags %}
                             <div class="post-tags">
-                                <span class="tag">hiking</span>
-                                <span class="tag">nature</span>
-                                <span class="tag">personal-growth</span>
+                                {% for tag in post.tags %}
+                                <span class="tag">{{ tag }}</span>
+                                {% endfor %}
                             </div>
-                            <a href="blog-vision-valley.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            {% endif %}
+                            <a href="{{ post.url | relative_url }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </article>
-
-                    <!-- Stage Crew Life Post -->
-                    <article class="blog-post" data-category="personal">
-                        <div class="post-image">
-                            <img src="images/stage-crew.jpg" alt="Stage Crew Life" onerror="this.src='https://via.placeholder.com/400x250/6c5ce7/ffffff?text=Stage+Crew'">
-                        </div>
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span class="post-category personal">Personal</span>
-                                <span class="post-date">September 20, 2024</span>
-                            </div>
-                            <h3 class="post-title">
-                                <a href="#" onclick="showComingSoon()">Behind the Scenes: Life as Stage Crew</a>
-                            </h3>
-                            <p class="post-excerpt">
-                                Discover what it's really like working behind the scenes in theater production. From set building to lighting, here's my experience as a stage crew member.
-                            </p>
-                            <div class="post-tags">
-                                <span class="tag">theater</span>
-                                <span class="tag">teamwork</span>
-                                <span class="tag">skills</span>
-                            </div>
-                            <a href="#" onclick="showComingSoon()" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                    <!-- Rowing Season Post -->
-                    <article class="blog-post" data-category="sports">
-                        <div class="post-image">
-                            <img src="images/rowing.jpg" alt="Rowing Season" onerror="this.src='https://via.placeholder.com/400x250/00b894/ffffff?text=Rowing+Season'">
-                        </div>
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span class="post-category sports">Sports</span>
-                                <span class="post-date">November 10, 2024</span>
-                            </div>
-                            <h3 class="post-title">
-                                <a href="#" onclick="showComingSoon()">Rowing Season Reflections</a>
-                            </h3>
-                            <p class="post-excerpt">
-                                Reflecting on an intense rowing season filled with early morning training, team bonding, and the pursuit of excellence on the water.
-                            </p>
-                            <div class="post-tags">
-                                <span class="tag">rowing</span>
-                                <span class="tag">fitness</span>
-                                <span class="tag">discipline</span>
-                            </div>
-                            <a href="#" onclick="showComingSoon()" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                    <!-- Placeholder for future posts -->
-                    <article class="blog-post coming-soon" data-category="technology">
-                        <div class="post-image">
-                            <img src="https://via.placeholder.com/400x250/fd79a8/ffffff?text=Coming+Soon" alt="Coming Soon">
-                        </div>
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span class="post-category technology">Technology</span>
-                                <span class="post-date">Coming Soon</span>
-                            </div>
-                            <h3 class="post-title">
-                                <a href="#" onclick="showComingSoon()">Building My Personal Website</a>
-                            </h3>
-                            <p class="post-excerpt">
-                                The journey of creating this website, the technologies I learned, and the challenges I faced along the way.
-                            </p>
-                            <div class="post-tags">
-                                <span class="tag">web-development</span>
-                                <span class="tag">html</span>
-                                <span class="tag">css</span>
-                            </div>
-                            <a href="#" onclick="showComingSoon()" class="read-more">Coming Soon <i class="fas fa-clock"></i></a>
-                        </div>
-                    </article>
+                    {% endfor %}
                 </div>
 
                 <!-- Empty State -->
@@ -209,9 +152,9 @@
                 <div class="footer-section">
                     <h4>Latest Posts</h4>
                     <ul>
-                        <li><a href="blog-vision-valley.html">Vision Valley Adventure</a></li>
-                        <li><a href="#" onclick="showComingSoon()">Stage Crew Life</a></li>
-                        <li><a href="#" onclick="showComingSoon()">Rowing Reflections</a></li>
+                        {% for post in site.posts limit:3 %}
+                        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -223,10 +166,6 @@
 
     <script src="script.js"></script>
     <script src="blog.js"></script>
-    <script>
-        function showComingSoon() {
-            alert('This blog post is coming soon! Check back later for more content.');
-        }
-    </script>
+    <script src="jekyll-blog.js"></script>
 </body>
 </html>

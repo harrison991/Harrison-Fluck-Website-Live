@@ -1823,6 +1823,544 @@ html {
     background: linear-gradient(45deg, #1d4ed8, #5b21b6);
 }
 
+/* Wallpaper Packs Page Styles */
+.wallpaper-packs-section {
+    padding: 6rem 0;
+    background: #f8fafc;
+}
+
+.wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.wallpaper-pack {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.wallpaper-pack:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.wallpaper-pack.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.pack-preview {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.wallpaper-pack.featured .pack-preview {
+    height: 300px;
+}
+
+.pack-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.wallpaper-pack:hover .pack-preview img {
+    transform: scale(1.05);
+}
+
+.pack-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.pack-info {
+    display: flex;
+    gap: 1rem;
+}
+
+.pack-count,
+.pack-resolution {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.featured-badge {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pack-content {
+    padding: 2rem;
+}
+
+.pack-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.pack-description {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.pack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.pack-tags .tag {
+    background: #e2e8f0;
+    color: #475569;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.pack-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+}
+
+.download-btn.large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.preview-btn {
+    background: transparent;
+    color: #2563eb;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #2563eb;
+    border-radius: 10px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.preview-btn:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Download Instructions */
+.download-instructions {
+    padding: 4rem 0;
+    background: white;
+}
+
+.instructions-card {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+}
+
+.instructions-card h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1e293b;
+}
+
+.instructions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.instruction-step {
+    text-align: center;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+}
+
+.instruction-step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.instruction-step p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Usage Guidelines */
+.usage-guidelines {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.guidelines-content h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #1e293b;
+}
+
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.guideline-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.guideline-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.guideline-item.allowed i {
+    color: #22c55e;
+}
+
+.guideline-item.not-allowed i {
+    color: #ef4444;
+}
+
+.guideline-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.guideline-item p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Download Success Message */
+.download-success-message {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: #22c55e;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+    z-index: 1000;
+    animation: slideInRight 0.3s ease;
+}
+
+.success-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wallpaper-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .wallpaper-pack.featured {
+        grid-template-columns: 1fr;
+        max-width: none;
+        margin: 1rem 0;
+    }
+    
+    .hero-stats {
+        gap: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .instructions-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .pack-actions {
+        flex-direction: column;
+    }
+    
+    .instructions-card {
+        padding: 2rem;
+    }
+}
+
+/* Blog Loading States */
+.loading-posts {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #64748b;
+}
+
+.loading-spinner {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2563eb;
+}
+
+.loading-posts p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Blog Post Meta Enhancement */
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.read-time {
+    color: #64748b;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.read-time i {
+    font-size: 0.8rem;
+}
+
+/* Individual Blog Post Loading */
+.loading-post-content {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #64748b;
+}
+
+.loading-post-content .loading-spinner {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2563eb;
+}
+
+/* Error Page Styles */
+.error-page {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.error-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.error-content p {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+}
+
+/* Enhanced Markdown Content Styles */
+.post-body h1,
+.post-body h2,
+.post-body h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-body h1 {
+    font-size: 2rem;
+    color: #1e293b;
+}
+
+.post-body h2 {
+    font-size: 1.6rem;
+    color: #334155;
+}
+
+.post-body h3 {
+    font-size: 1.3rem;
+    color: #475569;
+}
+
+.post-body blockquote {
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #475569;
+}
+
+.post-body code {
+    background: #f1f5f9;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.post-body pre {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.post-body ul,
+.post-body ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.post-body li {
+    margin-bottom: 0.5rem;
+}
+
+.featured-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 /* Animation classes */
 .fade-in {
     opacity: 0;
