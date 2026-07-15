@@ -5,7 +5,7 @@ subtitle: "Key takeaways from Glen Gerreyn's life-changing presentation at Churc
 date: 2026-07-15
 category: personal-growth
 tags: [personal-growth, inspiration, mindset, structure, habits]
-featured_image: /images/glen-gerreyn-talk.jpg
+featured_image: /images/glen-gerreyn-talk.png
 author: Harrison Fluck
 excerpt: "Reflecting on Glen Gerreyn's powerful message about how intentional daily structure and the compounding power of small improvements can unlock your true potential."
 ---
